@@ -51,10 +51,10 @@ const Navbar = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="sm" onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}>
             Join an Event
           </Button>
-          <Button size="sm" className="bg-gradient-mint hover:opacity-90 transition-opacity shadow-mint">
+          <Button size="sm" className="bg-gradient-mint hover:opacity-90 transition-opacity shadow-mint" onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}>
             Get Started
           </Button>
         </div>
@@ -84,8 +84,8 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2 border-t border-border">
-              <Button variant="ghost" size="sm">Join an Event</Button>
-              <Button size="sm" className="bg-gradient-mint">Get Started</Button>
+              <Button variant="ghost" size="sm" onClick={() => { setMobileOpen(false); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }); }}>Join an Event</Button>
+              <Button size="sm" className="bg-gradient-mint" onClick={() => { setMobileOpen(false); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }); }}>Get Started</Button>
             </div>
           </div>
         </div>

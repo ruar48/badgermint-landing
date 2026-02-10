@@ -39,7 +39,7 @@ const ForDevelopers = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button size="lg" className="bg-gradient-mint hover:opacity-90 text-base px-8 h-12 shadow-mint">
+              <Button size="lg" className="bg-gradient-mint hover:opacity-90 text-base px-8 h-12 shadow-mint" onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}>
                 Start Building
                 <ArrowRight size={18} />
               </Button>
@@ -47,6 +47,7 @@ const ForDevelopers = () => {
                 variant="outline"
                 size="lg"
                 className="text-base px-8 h-12 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Partner With Us
               </Button>
