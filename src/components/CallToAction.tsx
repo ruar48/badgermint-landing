@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, Handshake } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-24 lg:py-32 bg-secondary/50">
+    <section id="cta" className="py-24 lg:py-32 bg-secondary/50">
       <div className="container mx-auto px-4 lg:px-8 text-center">
         <AnimatedSection>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">

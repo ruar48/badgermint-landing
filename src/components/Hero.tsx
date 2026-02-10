@@ -33,6 +33,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="bg-gradient-mint hover:opacity-90 transition-opacity shadow-mint-lg text-base px-8 h-12"
+                onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Started
                 <ArrowRight size={18} />
@@ -41,6 +42,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="text-base px-8 h-12 border-border"
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Play size={18} />
                 See How It Works
