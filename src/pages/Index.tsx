@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import HowItWorks from "@/components/HowItWorks";
-import Features from "@/components/Features";
-import UseCases from "@/components/UseCases";
+import NFCProfiles from "@/components/NFCProfiles";
 import MicroApps from "@/components/MicroApps";
-import ForDevelopers from "@/components/ForDevelopers";
+import BlockchainCerts from "@/components/BlockchainCerts";
+import UseCases from "@/components/UseCases";
+import PartnerSection from "@/components/PartnerSection";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 
@@ -14,11 +14,11 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <HowItWorks />
-        <Features />
-        <UseCases />
+        <NFCProfiles />
         <MicroApps />
-        <ForDevelopers />
+        <BlockchainCerts />
+        <UseCases />
+        <PartnerSection />
         <CallToAction />
       </main>
       <Footer />
