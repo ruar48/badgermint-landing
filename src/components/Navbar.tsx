@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "NFC Profiles", href: "#nfc-profiles" },
+  { label: "Micro Apps", href: "#micro-apps" },
+  { label: "Blockchain", href: "#blockchain" },
   { label: "Use Cases", href: "#use-cases" },
-  { label: "For Developers", href: "#developers" },
 ];
 
 const Navbar = () => {
@@ -19,24 +19,27 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollTo = (id: string) => {
+    setMobileOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-soft"
           : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
-          <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-mint text-primary-foreground font-bold text-sm">
+        <a href="#" className="flex items-center gap-2.5 font-display text-xl font-bold text-foreground">
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-mint text-primary-foreground font-bold text-sm">
             B
           </span>
           BadgerMint
         </a>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -49,17 +52,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}>
-            Join an Event
+          <Button variant="ghost" size="sm" className="font-medium" onClick={() => scrollTo('cta')}>
+            Request Demo
           </Button>
-          <Button size="sm" className="bg-gradient-mint hover:opacity-90 transition-opacity shadow-mint" onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}>
-            Get Started
+          <Button size="sm" className="bg-gradient-mint hover:opacity-90 transition-opacity shadow-mint rounded-xl font-medium" onClick={() => scrollTo('partner')}>
+            Partner With Us
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -69,7 +70,6 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
@@ -84,8 +84,8 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2 border-t border-border">
-              <Button variant="ghost" size="sm" onClick={() => { setMobileOpen(false); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }); }}>Join an Event</Button>
-              <Button size="sm" className="bg-gradient-mint" onClick={() => { setMobileOpen(false); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }); }}>Get Started</Button>
+              <Button variant="ghost" size="sm" onClick={() => scrollTo('cta')}>Request Demo</Button>
+              <Button size="sm" className="bg-gradient-mint rounded-xl" onClick={() => scrollTo('partner')}>Partner With Us</Button>
             </div>
           </div>
         </div>
